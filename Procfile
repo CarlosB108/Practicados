@@ -1,1 +1,1 @@
-web: ./build/install/practica2/bin/practica2
+web: ./build/install/app/bin/app

@@ -6,9 +6,9 @@ apply plugin: 'application'
 sourceCompatibility = 1.8
 
 apply plugin: 'application'
-archivesBaseName = "practica2"
+archivesBaseName = "app"
 mainClassName = 'main'
-applicationName = 'practica2'
+applicationName = 'app'
 
 defaultTasks = ['stage']
 
