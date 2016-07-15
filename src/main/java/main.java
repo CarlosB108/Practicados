@@ -19,6 +19,7 @@ import org.h2.tools.Server;
 
 
 import static spark.Spark.*;
+import static spark.debug.DebugScreen.enableDebugScreen;
 
 
 public class main {
@@ -28,6 +29,8 @@ public class main {
 
 
     public static void main(String [] args) throws Exception {
+
+        enableDebugScreen();
 
         ProcessBuilder process = new ProcessBuilder();
         Integer port;
