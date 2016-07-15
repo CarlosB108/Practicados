@@ -2,8 +2,12 @@ group 'edu.com'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
-
+apply plugin: 'application'
 sourceCompatibility = 1.8
+
+mainClassName = "main"
+applicationName = "practica2"
+defaultTasks = ['clean','jar']
 
 repositories {
     mavenCentral()
@@ -23,3 +27,5 @@ dependencies {
 
 
 }
+
+task stage(dependsOn: ['clean', 'installApp'])
