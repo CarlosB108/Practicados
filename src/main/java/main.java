@@ -2,6 +2,7 @@
  * Created by carlosb108 on 5/29/16.
  */
 
+
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
 
@@ -13,6 +14,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import org.h2.tools.Server;
+
+
 
 import static spark.Spark.*;
 
@@ -24,6 +28,26 @@ public class main {
 
 
     public static void main(String [] args) throws Exception {
+
+        ProcessBuilder process = new ProcessBuilder();
+        Integer port;
+        if (process.environment().get("PORT") != null) {
+            port = Integer.parseInt(process.environment().get("PORT"));
+        } else {
+            port = 4567;
+        }
+
+        setPort(port);
+
+        Server server = null;
+        try {
+            server = Server.createTcpServer("-tcpAllowOthers").start();
+        } catch (SQLException e) {
+            System.out.println("FAILED TO START SERVER, CLOSE H2 IF YOU HAVE IT OPENED");
+            e.printStackTrace();
+        }
+
+
 
 
         // http://http://localhost:4567/
